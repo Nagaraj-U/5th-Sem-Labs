@@ -21,7 +21,7 @@ int findMinVertex(bool visited[n],int distance[n],int n){
     return minVertex;
 }
 
-void dij(int cost[][n],int n)
+void dij(int cost[][n],int n,int source)
 {
     bool visited[n];
     int distance[n];
@@ -29,7 +29,7 @@ void dij(int cost[][n],int n)
         visited[i] = false;
         distance[i] = 9999;
     }
-    distance[0] = 0;
+    distance[source] = 0;
     for(int i=0;i<n-1;i++){
         int minVertex = findMinVertex(visited,distance,n);
         visited[minVertex] = true;
@@ -61,7 +61,10 @@ int main()
             scanf("%d",&cost[i][j]);
         }
     }
-    dij(cost,n);
+    printf("enter source node\n");
+    int source;
+    scanf("%d",&source);
+    dij(cost,n,source);
     return 0;
    
 }
@@ -70,17 +73,50 @@ int main()
 /*
 5
 0 10 0 30 100
-10 0 50 0 0 
+10 0 50 0 0
 0 50 0 20 10
 30 0 20 0 60
 100 0 10 60 0
-Node    Dist
-0       0       
-1       10
+
+enter source node
+1
+
+Node   Dist
+0       10      
+1       0
 2       50
-3       30
+3       40      
 4       60
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
