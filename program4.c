@@ -1,3 +1,10 @@
+/*
+
+Program 4: Given a graph find shortest paths from source to all nodes in the
+graph using Dijkstra’s shortest path algorithm.
+
+*/
+
 #include <stdio.h>
 #define infinity 999
 void dij(int n,int v,int cost[10][10],int dist[])
