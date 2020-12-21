@@ -119,3 +119,58 @@ int main()
     }
     return 0;
 }
+/*
+
+OUTPUT
+
+
+1 : insert
+2 : delete
+3 : display
+4 : exit
+enter choice
+1
+enter element to insert
+52
+enter choice
+1     
+enter element to insert
+20
+enter choice
+1
+enter element to insert
+30
+enter choice
+1
+enter element to insert
+60
+enter choice
+1
+enter element to insert
+155
+enter choice
+3
+155     60      52      30      20 
+enter choice
+2
+enter the element ot delete
+52
+enter choice
+3
+155     60      30      20 
+enter choice
+2
+enter the element ot delete
+60
+enter choice
+3
+155     30      20 
+enter choice
+1
+enter element to insert
+10
+enter choice
+3
+155     30      20      10 
+
+*/
