@@ -41,7 +41,7 @@ int get_key(int private_n,int public_n,int p){
 
 int main()
 {
-    int p = 13;
+    int p = 11;
     //int alpha = 2;
     int alpha =  getalpha(p);
     int private_a = 8;
