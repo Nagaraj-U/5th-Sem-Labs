@@ -29,15 +29,18 @@ int getalpha(int p)
     return 0;
 }
 
+
 int get_public(int alpha,int private_n,int p){
     long long temp = pow(alpha,private_n);
     return (temp%p);
 }
 
+
 int get_key(int private_n,int public_n,int p){
     long long temp = pow(public_n,private_n);
     return (temp%p);
 }
+
 
 int main()
 {
