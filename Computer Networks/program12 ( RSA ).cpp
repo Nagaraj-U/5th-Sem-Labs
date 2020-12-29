@@ -79,3 +79,32 @@ int main()
     cout << "decrypted message : " << ans << endl;
     return 0;
 }
+
+/*
+
+enter message 
+29
+p is : 11
+q is : 3
+n is : 33
+totient is : 20
+public key : 3
+private key : 7
+user message : 29
+encrypted message : 2
+decrypted message : 29
+
+
+
+
+enter message 
+15
+p is : 11
+q is : 3
+n is : 33
+totient is : 20
+public key : 3
+private key : 7
+user message : 15
+encrypted message : 9
+*/
