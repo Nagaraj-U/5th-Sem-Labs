@@ -61,3 +61,18 @@ int main()
     cout <<"key at A " << key_a << endl; 
     cout <<"key at B " << key_b << endl; 
 }
+
+/*
+enter p
+13
+alpha is 2
+key at A 9
+key at B 9
+
+
+enter p
+7
+alpha is 3
+key at A 2
+key at B 2
+*/
