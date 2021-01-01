@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="A8.js"></script>
+</head>
+<body>
+    <form>
+        operand 1 <input type="text" id="op1"><br><br>
+        opearand 2 <input type="text" id="op2"><br><br>
+
+        <input type="radio" name="calc" id="add" value="Add" onclick="calculate()">
+        <label for="add">Addition</label><br>
+
+        <input type="radio" name="calc" id="sub" value="Sub"  onclick="calculate()">
+        <label for="sub">Substraction </label><br>
+
+        <input type="radio" name="calc" id="mul" value="Mul"  onclick="calculate()">
+        <label for="mul">Multiplication </label><br>
+
+        <input type="radio" name="calc" id="div" value="Div"  onclick="calculate()">
+        <label for="div">Division </label><br>
+
+        <!-- <input type="button" onclick="result()" value="calculate"> -->
+    </form> 
+
+    <P>Result of calculation is : </P> <p id="answer"></p>
+    
+</body>
+</html>
