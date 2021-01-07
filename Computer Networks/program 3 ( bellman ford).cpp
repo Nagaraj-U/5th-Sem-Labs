@@ -1,82 +1,59 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void bellman(int cost[][20],int n,int src,int e,int graph[][3])
+void bellman(int graph[10][3],int n,int e,int src)
 {
-    int distance[n];
+    int* dist = new int[n];
     for(int i=0;i<n;i++){
-        distance[i] = INT_MAX;
+        dist[i] = INT_MAX;
     }
-    distance[src] = 0;
+    dist[src] = 0;
     for(int i=0;i<(n-1);i++){
         for(int j=0;j<e;j++){
-            if((distance[graph[j][0]] + graph[j][2]) < distance[graph[j][1]]){
-                distance[graph[j][1]] = distance[graph[j][0]] + graph[j][2];
+            int start = graph[j][0];
+            int end = graph[j][1];
+            int weight = graph[j][2];
+            if(dist[start] != INT_MAX && dist[start] + graph[j][2] < dist[end]){
+                dist[end] = graph[j][2] + dist[start];
             }
         }
     }
 
-    for(int i=0;i<n;i++){
-        cout << i << " " << distance[i] << endl; 
+    for(int i=0;i<e;i++){
+        int start = graph[i][0];
+        int end = graph[i][1];
+        if(dist[start] != INT_MAX && dist[start] + graph[i][2] < dist[end]){
+            cout << "graph contain negative weight cycle" << endl;
+        }
     }
-
+    cout << "vertex ditance from source" << endl;
+    for(int i=0;i<n;i++){
+        cout << src << " to " << i << "  " << dist[i] << endl; 
+    }
+    return;
 }
 
 int main()
 {
-    int n;
-    int cost[20][20];
-    cout << "enter number of nodes" << endl;
-    cin >> n;
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cin >> cost[i][j];
-        }
+    cout << "hello" << endl;
+    int graph[10][3];
+    int n,e;
+    cout << "enter number of vertices and edges" << endl;
+    cin >> n ;
+    cin >> e;
+    int arr[20][3];
+    for(int i=0;i<e;i++){
+        int start,end,weight;
+        cin >> start;
+        cin  >> end;
+        cin  >> weight;
+        arr[i][0] = start;
+        arr[i][1] = end;
+        arr[i][2] = weight;
     }
     int src;
-    cout << "enter source node " << endl;
+    cout << "enter source" << endl;
     cin >> src;
-    int e = 0;
-    int graph[20][3];
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(cost[i][j] != 0){
-                int u = i;
-                int v = j;
-                int w = cost[i][j];
-                graph[e][0] = u;
-                graph[e][1] = v;
-                graph[e][2] = w;
-                e++;
-
-            }
-        }
-    }
-
-    //   int graph[][3] = { { 0, 1, -1 }, { 0, 2, 4 }, 
-    //                    { 1, 2, 3 }, { 1, 3, 2 },  
-    //                    { 1, 4, 2 }, { 3, 2, 5 },  
-    //                    { 3, 1, 1 }, { 4, 3, -3 } }; 
-    //                    e = 8;
-    bellman(cost,n,src,e,graph);
+    bellman(arr,n,e,src);
     return 0;
-}
-
-/*
-
-6
-0 6 4 5 0 0 
-0 0 0 0 -1 0
-0 -2 0 0 3 0
-0 0 -2 0 0 -1
-0 0 0 0 0 3
-0 0 0 0 0 0
-enter source node 
-0
-0 0
-1 1
-2 3
-3 5
-4 0
-5 3
-*/
+} 
