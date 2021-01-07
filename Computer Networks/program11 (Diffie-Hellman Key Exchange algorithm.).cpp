@@ -46,6 +46,11 @@ int main()
 {
     int p = 11;
     //int alpha = 2;
+    
+    /*
+    p = 23;
+    alpha = 5;
+    */
     int alpha =  getalpha(p);
     int private_a = 8;
     int private_b = 4;
