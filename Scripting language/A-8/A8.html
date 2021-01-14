@@ -3,30 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <script src="A8.js"></script>
+    <title>customer info</title>
 </head>
 <body>
-    <form>
-        operand 1 <input type="text" id="op1"><br><br>
-        opearand 2 <input type="text" id="op2"><br><br>
+    <script>
+        function display(){
+            var name  = document.getElementById("name").value;
+            document.getElementById("resname").innerHTML = name
 
-        <input type="radio" name="calc" id="add" value="Add" onclick="calculate()">
-        <label for="add">Addition</label><br>
+            if(document.getElementById("male").checked){
+                document.getElementById("resgender").innerHTML = "Male"
+            }
+            else if(document.getElementById("female").checked){
+                document.getElementById("resgender").innerHTML = "feMale"
+            }
+            if(document.getElementById("other").checked){
+                document.getElementById("resgender").innerHTML = "other"
+            }
 
-        <input type="radio" name="calc" id="sub" value="Sub"  onclick="calculate()">
-        <label for="sub">Substraction </label><br>
+            var feed = document.getElementById("otherfeed").value
+            document.getElementById("resother").innerHTML = feed
+        }
+    </script>
+    <form method="POST">
+        Name : <input type="text" id="name">
+        <br>
+        <p>select gender</p>
+        <input type="radio" id="male" name="gender">male</input><br>
+        <input type="radio" id="female" name="gender">female</input><br>
+        <input type="radio" id="other" name="gender">other</input><br>
 
-        <input type="radio" name="calc" id="mul" value="Mul"  onclick="calculate()">
-        <label for="mul">Multiplication </label><br>
+        <p>other feedback</p><br>
+        <textarea rows="20" cols="40" id="otherfeed">enter other feedback</textarea>
 
-        <input type="radio" name="calc" id="div" value="Div"  onclick="calculate()">
-        <label for="div">Division </label><br>
-
-        <!-- <input type="button" onclick="result()" value="calculate"> -->
-    </form> 
-
-    <P>Result of calculation is : </P> <p id="answer"></p>
-    
+        <input type="button" onclick="display()" value="submit">
+    </form>
+    <p id="resname"></p>
+    <p id="resgender"></p>
+    <p id="resother"></p>
 </body>
 </html>
