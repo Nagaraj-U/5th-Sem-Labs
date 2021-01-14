@@ -3,51 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating Static Pages with different HTML Components</title>
-
+    <title>customer info</title>
 </head>
 <body>
-    
-    <form action="HTML-intro1.html">
-        <h3>Form Demo</h3>
-        <input type="text" name="username" placeholder="name">
-        <br><br>
-        <input type="text" name="password" placeholder="password">
-        <br><br>
-       
-   
-    <br>
+    <script>
+        function display(){
+            var name  = document.getElementById("name").value;
+            document.getElementById("resname").innerHTML = name
 
+            if(document.getElementById("male").checked){
+                document.getElementById("resgender").innerHTML = "Male"
+            }
+            else if(document.getElementById("female").checked){
+                document.getElementById("resgender").innerHTML = "feMale"
+            }
+            if(document.getElementById("other").checked){
+                document.getElementById("resgender").innerHTML = "other"
+            }
 
-    <h3>select demo</h3>
-    <select>
-        
-        <option value="city1" selected>bangalore</option>
-        <option value="city2">belgaum</option>
-        <option value="city3">mysore</option>
+            var feed = document.getElementById("otherfeed").value
+            document.getElementById("resother").innerHTML = feed
+        }
+    </script>
+    <form method="POST">
+        Name : <input type="text" id="name">
+        <br>
+        <p>select gender</p>
+        <input type="radio" id="male" name="gender">male</input><br>
+        <input type="radio" id="female" name="gender">female</input><br>
+        <input type="radio" id="other" name="gender">other</input><br>
 
-    </select>
+        <p>other feedback</p><br>
+        <textarea rows="20" cols="40" id="otherfeed">enter other feedback</textarea>
 
-
-    <h3>radio button Demo</h3>
-    <input type="radio" value="male" checked>male</input><br>
-    <input type="radio" value="female">female</input><br>
-    <input type="radio" value="other">other</input><br>
-    <br>
-
-
-    <h3>checkbox demo</h3>
-    <input type="checkbox" value="good">good</input><br>
-    <input type="checkbox" value="okay">okay</input><br>
-    <input type="checkbox" value="bad">bad</input><br>
-
-    <br>
-    <h3>textarea Demo</h3>
-    <textarea name="otherfeedback" rows="20" cols="40">Enter other feedback</textarea><br>
-
-
-    <button type="submit" style="color: blue; font-size: 18px">submit</button>
-</form>
-
+        <input type="button" onclick="display()" value="submit">
+    </form>
+    <p id="resname"></p>
+    <p id="resgender"></p>
+    <p id="resother"></p>
 </body>
 </html>
