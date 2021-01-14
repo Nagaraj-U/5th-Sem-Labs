@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookies and cake</title>
+</head>
+<body>
+    <script>
+        function calculate(){
+        var cakeSelected = document.getElementById("cake").checked;
+        var cookieSelected = document.getElementById("cookie").checked;
+        var cakeQuantity = document.getElementById("cakeQuantity").value;
+        var cookieQuantity = document.getElementById("cookieQuantity").value;
+        if(cakeSelected){
+            document.getElementById("result").innerHTML = (100*cakeQuantity);
+        }
+        if(cookieSelected){
+            document.getElementById("result").innerHTML = (500*cookieQuantity)
+        }
+        }
+
+    </script>
+
+    
+    <input type="radio" name="item" id="cake">
+    <label for="cake"><img src="cake.png" width="100px"/></label>
+    <P>cost for cake is 100</P><br>
+    enter cake quantity<input type="number" id="cakeQuantity"><br>
+
+    <input type="radio" name="item" id="cookie">
+    <label for="cookie"><img src="cookie.png"></label>
+    <P>cost for cookie</P>
+    enter cookie quantity<input type="number" id="cookieQuantity">
+    <P>cost for cookie is 500</P><br>
+    <input type="submit" onclick="calculate()" value="order">
+
+    <p id="result"></p>
+
+</body>
+</html>
